@@ -1,0 +1,73 @@
+Type,Name,Description,Damage,Piercing,Speed,Power,Value,Effect 1,Application,Effect 2
+Shape,Full Metal Jacket (FMJ),Default,10,5%,0,0,$1.50,,,
+Shape,Hollow Point,2x Damage to unarmored enemies,0,-10%,10,0,$1.00,2x Dam,,
+Shape,Frangible (Frag),Does not penetrate further than first hit,0,-100%,0,20,$1.00,,,
+Shape,Armor Piercing (AP),Best piercing value,10,40%,-20,10,$2.00,,,
+Shape,Bore Shell,"12x Buckshot, can add dust to any projectile",Dam/12,0%,0,10,$2.00,8 Range,,
+Metal,Lead,Default,70,10%,50,10,$1.50,,,
+Metal,Silver,"Adds ""Silver"" effect to Dark ghosts",60,10%,50,0,$5.20,3 turns,,
+Metal,Gold,"Adds ""Silver"" effect to Dark & Blight ghosts",60,0%,80,0,$11.75,3 turns,,
+Metal,Tungsten,Can be superheated or frozen,90,10%,30,10,$2.00,Superfire,,
+Metal,Aluminum,,40,10%,100,0,$1.50,,,
+Metal,Bronze,Disables corporeal armor of ghosts,30,0%,50,30,$1.85,1 turn,,
+Metal,Osmium,"Adds 1 ""Weighted"" when lodged in a ghost",50,30%,10,30,$7.30,,,
+Metal,Uranium,"Adds 1 ""Weighted"" when lodged in a ghost",100,20%,-10,40,$13.95,,,
+Metal,Steel,,80,20%,40,20,$1.70,,,
+Wood,Aged Kagukti,Ignores corporeal forms of Dark ghosts,60,10%,40,10,$1.20,,,
+Wood,Hardwood,Deals 2x Damage to Dark ghosts,50,0%,40,30,$1.00,,,
+Wood,Blackwood,Ignores Light ghosts armor when on fire,50,10%,40,10,$1.20,100% Prce,,
+Wood,Kitarougian Cherry,Deals 2x Damage to Dark & Infernal ghosts,50,10,40,20,$1.10,,,
+Wood,Common Wood,Deals 2x Damage to Dark ghosts,50,10,40,20,$0.80,,,
+Relic,Mythic Bone,Vessel for a sealed ghost's ability,70,10%,20,10,$2.50,,,
+Relic,Eternal Ice,3x Power for Burning ghosts,50,-20%,70,20,$3.30,,,
+Relic,Northern Rock Salt,Ignores corporeal forms of Blight ghosts,40,-20%,50,0,$0.35,100% Prce,,
+Dust,Salt Dust,"Adds ""Salt"" to Dark ghosts covered in dust",,,,,$0.10,3 turns,AND,3 turns
+Dust,Gold Dust,Adds Gold's effect to all ghosts covered in dust,,,,,$5.30,Gold Effect,AND,3 turns
+Dust,Mountain Snow,"Adds ""Frostbite"" to Burning ghosts",,,,,$0.05,2 turns,AND,3 turns
+Dust,Bindii Dust,"Adds 1 ""Aphrodisiac"" to Divine ghosts",,,,,$0.20,5 turns,AND,3 turns
+Dust/Metal,Iron Powder,Can be electrified & is magnetic,,,,,$1.75,,AND,3 turns
+Dust,Glass,,50,20%,,20,$0.20,,AND,3 turns
+Dust,Mushroom Spores,"Adds ""Purging Flame"" to Blight ghosts",,,,,$1.20,5 turns,AND,3 turns
+Dust/Oil,Rotten Meat,"Adds ""Purging Flame"" to Divine ghosts",,,,,$1.30,5 turns,AND,3 turns
+Oil,White Wheat Oil,"Adds ""Frail"" to Infernal ghosts",,,,,$0.55,2 turns,AND,10 turns
+Oil,Bindii Oil,"Adds ""Aphrodisiac"" to Divine & Light ghosts",,,-10,,$0.70,10 turns,,
+Oil,Alcohol,Ignites into flame when fired via combustion,,,-20,,$2.50,Fire Bullet,,
+Oil,Lubricant,,,,30,,,,,
+Oil/Metal,Mercury,"Adds ""Frail"" to Blight, Divine, & Infernal ghosts",50,30%,0,0,$1.35,1 turn,,
+Other,Rubber,Non-lethal,-100,0%,70,20,$0.15,,,
+Other,Plastic,Has a 5% chance to misfire,50,0%,50,0,$0.05,,,
+Other,Soul Glass (Empty),Corporeally steals souls then can be retrieved,0,0%,80,0,$7.55,,,
+Other,Soul Glass (Dark),"Adds ""Soul Tremor"" to Phantom & Light ghosts",0,0,80,0,$17.35,Indefinitely,,
+Other,Soul Glass (Light),"Adds ""Soul Tremor"" to Phantom & Dark ghosts",0,0,80,0,$17.35,Indefinitely,,
+Other,Soul Glass (Burning),"Adds ""Soul Tremor"" to Phantom & Freezing ghosts",0,0,80,0,$17.35,Indefinitely,,
+Other,Soul Glass (Freezing),"Adds ""Soul Tremor"" to Phantom & Burning ghosts",0,0,80,0,$17.35,Indefinitely,,
+Stone,Sagerock,"Adds ""Purging Flame"" to Phantom ghosts",40,10%,-10,10,$4.30,5 turns,,
+Stone,Blood Stone (Inactive),Collects blood for sealed ghost abilities on hit,20,20%,50,0,$7.00,,,
+Stone,Blood Stone (Active),Deals 5x damage to Divine & Light ghosts,20,20%,50,0,$7.00,,,
+Stone,Azurite,Explodes when electrified or frozen,60,0%,-10,10,$4.00,2x Dam,AND,3x Pow
+Stone,Black Tormaline,Punches a physical area in nonphysical ghosts,20,100%,80,0,$2.25,1 turn,,
+Stone,Diamond,,80,40%,50,20,$25.35,,,
+Powder,Black Powder,Default,20,10%,50,10,$0.25,,,
+Powder,Iron Powder,Electrifies or superheats metal bullets,20,10%,50,20,$1.75,2x Dam,OR,Fire Bullet
+Powder,Magnetic Powder,Makes metal bullets always hit physical metal,0,10%,30,20,$1.00,,,
+Powder,Blasting Powder,Makes wood & stone bullets explosive,30,30%,60,30,$5.35,3x Pow,,
+Powder,Ghost Powder,Devoid of a muzzle flash when shot,0,0%,40,-10,$0.75,,,
+Powder,Resonant Powder,Incredibly loud when shot,0,0%,40,-10,$0.15,,,
+Powder,Mythic Black Ash,Vessel for a sealed ghost's ability,10,10%,50,10,$3.15,,,
+Powder,Cordite,Has a 5% chance to misfire,20,10%,50,10,$0.05,,,
+Powder,Gas Propellant,"Leaves no residue, very bright flash, very loud sound",20,10%,40,0,$0.25,,,
+Primer,Standard,Default,,,,,$0.15,,,
+Primer,Burning Primer,Forces a superheated blast,,,,,$3.00,Fire Bullet,,
+Primer,Freezing Primer,Forces a cold air blast,,,,,$3.00,Cold Bullet,,
+Primer,Electric Sparker,Forces Iron Powder to electrify bullet,,,,,$3.00,,,
+Primer,Relic Primer,Vessel for a sealed ghost's ability,,,,,$4.50,,,
+Primer,Spectral Dust,Turns bullets corporeal with a debuff,,,,,$5.20,-10% Spd,AND,-10% Prce
+Primer,Phantom Primer,Turns bullets corporeal & sealed ability vessel,,,,,$11.35,,,
+Primer,AHU Product 88 (P88),Turns bullets corporeal,,,,,$7.80,,,
+Primer,Low Quality,Has a 5% chance to misfire,,,,,$0.05,,,
+Casing,Brass,Default,,,,,$0.15,,,
+Casing,Leather Wrapped Steel,Deals 2x Damage to Dark ghosts,,,,,$0.30,2x Dam,,
+Casing,Rust,"Adds ""Poison"" to Divine & Mortal ghosts",,-30%,-30,,$0.05,5 turns,,
+Casing,White Bronze,Disappears when bullet turns corporeal,,,,,$1.00,2x Spd,,
+Casting,Cobalt,,,,30,,$2.90,,,
+Casing,Etched Bronze,Vessel for a mystic etching,,,,,$2.35,,,
