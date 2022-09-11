@@ -17,10 +17,10 @@ public class PartData {
 
     private static final String DATA_FILE = "src/resources/part_data.csv";
 
-    static ArrayList<Map> allParts;
+    public static ArrayList<Map> allParts;
 
     //Copied from techjobs-console-java, modified
-    private static void loadData() {
+    public static void loadData() {
 
         // Only load data once
 
@@ -32,7 +32,7 @@ public class PartData {
 
             // Open the CSV file and set up pull out column header info and records
             Reader in = new FileReader(DATA_FILE);
-            CSVParser parser = CSVFormat.RFC4180.parse(in);
+            CSVParser parser = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(in);
             List<CSVRecord> records = parser.getRecords();
             int numberOfColumns = records.get(0).size();
             String[] headers = parser.getHeaderMap().keySet().toArray(new String[numberOfColumns]);
