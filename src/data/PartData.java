@@ -9,13 +9,17 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-    public class PartData {
+public class PartData {
 
     static boolean isDataLoaded;
 
-    private static final String DATA_FILE = "src/resources/job_data.csv";
+    private static final String DATA_FILE = "src/resources/part_data.csv";
 
+    static ArrayList<Map> allParts;
+
+    //Copied from techjobs-console-java, modified
     private static void loadData() {
 
         // Only load data once
@@ -33,24 +37,24 @@ import java.util.List;
             int numberOfColumns = records.get(0).size();
             String[] headers = parser.getHeaderMap().keySet().toArray(new String[numberOfColumns]);
 
-            allJobs = new ArrayList<>();
+            allParts = new ArrayList<>();
 
             // Put the records into a more friendly format
             for (CSVRecord record : records) {
-                HashMap<String, String> newJob = new HashMap<>();
+                HashMap<String, String> newPart = new HashMap<>();
 
                 for (String headerLabel : headers) {
-                    newJob.put(headerLabel, record.get(headerLabel));
+                    newPart.put(headerLabel, record.get(headerLabel));
                 }
 
-                allJobs.add(newJob);
+                allParts.add(newPart);
             }
 
             // flag the data as loaded, so we don't do it twice
             isDataLoaded = true;
 
         } catch (IOException e) {
-            System.out.println("Failed to load job data");
+            System.out.println("Failed to load part data");
             e.printStackTrace();
         }
     }

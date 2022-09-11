@@ -4,42 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_csv_1_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ghost-game.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/ElementList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/EntityList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/GhostList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/PartData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/PartList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/PlayerList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/SkillList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Element.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Form.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Skill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/entities/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/entities/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/entities/Ghost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/entities/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/items/Bullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/items/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/items/Part.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/part_data.csv" afterDir="false" />
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="another very late start on git">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/PartData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PartData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +71,14 @@
       <option name="presentableId" value="Default" />
       <updated>1662820294027</updated>
     </task>
+    <task id="LOCAL-00001" summary="another very late start on git">
+      <created>1662856550909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662856550909</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,5 +94,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="another very late start on git" />
+    <option name="LAST_COMMIT_MESSAGE" value="another very late start on git" />
   </component>
 </project>
