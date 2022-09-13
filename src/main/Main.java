@@ -1,18 +1,14 @@
 package main;
 
 import data.PartData;
+import models.items.Bullet;
 
 public class Main {
     public static void main (String[] args) {
         System.out.println("running main");
         PartData.loadPartData();
-        System.out.println("ooga booga");
-        System.out.println(PartData.allParts);
-        System.out.println(PartData.allCasings);
-        System.out.println(PartData.allShape);
-        System.out.println(PartData.allDust);
-        System.out.println(PartData.allPowder);
-        System.out.println(PartData.allPrimer);
-        System.out.println(PartData.allProjectile);
+        System.out.println(new Bullet("Default", PartData.allShape.get("Full Metal Jacket"),
+                PartData.allProjectile.get("Lead"), PartData.allPowder.get("Black Powder"),
+                PartData.allPrimer.get("Standard"), PartData.allCasings.get("Brass")));
     }
 }

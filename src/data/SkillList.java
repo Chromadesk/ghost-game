@@ -9,8 +9,9 @@ public class SkillList {
 
     private static final ArrayList<Skill> allSkills = new ArrayList<>() {
         {
-            add(new Skill("Attack", 30, 0, 60, 10, 1, ElementList.multi("Mortal")));
-            add(new Skill("Shoot"));
+            add(new Skill("Attack", 30, 0, 60, 10, 1));
+            add(new Skill("Shoot", 1));
+            add(new Skill("Reload", 1));
             add(new Skill("Move", 30, 1));
         }
     };

@@ -11,12 +11,11 @@ import java.util.*;
 
 public class PartData {
 
-    static boolean isDataLoaded;
+    private static boolean isDataLoaded;
 
     private static final String DATA_FILE = "src/resources/part_data.csv";
 
-    public static ArrayList<Map<String, String>> allParts;
-
+    private static ArrayList<Map<String, String>> allParts;
     public static final HashMap<String, Casing> allCasings = new HashMap<>();
     public static final HashMap<String, Dust> allDust = new HashMap<>();
     public static final HashMap<String, Powder> allPowder = new HashMap<>();
@@ -25,7 +24,7 @@ public class PartData {
     public static final HashMap<String, Shape> allShape = new HashMap<>();
 
     //Copied from techjobs-console-java, modified
-    public static void loadData() {
+    private static void loadData() {
 
         // Only load data once
 
@@ -64,7 +63,7 @@ public class PartData {
         }
     }
 
-    public static boolean isNumeric(String strNum) {
+    private static boolean isNumeric(String strNum) {
         if (strNum == null) {
             return false;
         }
@@ -76,51 +75,53 @@ public class PartData {
         return true;
     }
 
+    private static double makeDouble(String strNum) {
+        if (strNum.length() == 0) {
+            return 0;
+        }
+        return Double.parseDouble(strNum);
+    }
+
+    private static double numberifyCash(String money) {
+        if (money.length() == 0) {
+            return 0;
+        }
+        return makeDouble(money.substring(2));
+    }
+
     public static void loadPartData() {
         loadData();
         for (Map<String, String> part : allParts) {
-            HashMap<String, Double> stats = new HashMap<>();
-            stats.put("Damage", 0.0);
-            stats.put("Piercing", 0.0);
-            stats.put("Speed", 0.0);
-            stats.put("Power", 0.0);
-            stats.put("Value", 0.0);
-
-
-            for (String strNum : part.values()) {
-                if(isNumeric(strNum)) {
-                    double num = Double.parseDouble(strNum);
-                    for (Map.Entry<String, Double> stat : stats.entrySet()) {
-                        if(part.containsKey(stat.getKey())) {
-                            stats.replace(stat.getKey(), num);
-                        }
-                    }
-                }
+            //Sort into Projectiles
+            if (part.get("Type").contains("Solid")) {
+                allProjectile.put(part.get("Name"), new Projectile(part.get("Name"), part.get("Type"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
+                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
+            }
+            //Sort into Shapes
+            if (part.get("Type").contains("Shape")) {
+                allShape.put(part.get("Name"), new Shape(part.get("Name"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
+                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
             }
 
-            if (part.get("type").contains("Casing")) {
-                allCasings.put(part.get("Name"), new Casing(part.get("Name"), stats.get("Damage"), stats.get("Piercing"),
-                        stats.get("Speed"), stats.get("Power"), stats.get("Value")));
+            //Sort into Dusts/Oils
+            if (part.get("Type").contains("Dust") || part.get("Type").contains("Oil")) {
+                allDust.put(part.get("Name"), new Dust(part.get("Name"), part.get("Type"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
+                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
             }
-            if (part.get("type").contains("Dust") || part.get("type").contains("Oil")) {
-                allDust.put(part.get("Name"), new Dust(part.get("Name"), part.get("Type"), stats.get("Damage"), stats.get("Piercing"),
-                        stats.get("Speed"), stats.get("Power"), stats.get("Value")));
+            //Sort into Powders
+            if (part.get("Type").contains("Powder")) {
+                allPowder.put(part.get("Name"), new Powder(part.get("Name"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
+                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
             }
-            if (part.get("type").contains("Powder")) {
-                allPowder.put(part.get("Name"), new Powder(part.get("Name"), stats.get("Damage"), stats.get("Piercing"),
-                        stats.get("Speed"), stats.get("Power"), stats.get("Value")));
+            //Sort into Primers
+            if (part.get("Type").contains("Primer")) {
+                allPrimer.put(part.get("Name"), new Primer(part.get("Name"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
+                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
             }
-            if (part.get("type").contains("Primer")) {
-                allPrimer.put(part.get("Name"), new Primer(part.get("Name"), stats.get("Damage"), stats.get("Piercing"),
-                        stats.get("Speed"), stats.get("Power"), stats.get("Value")));
-            }
-            if (part.get("type").contains("Shape")) {
-                allShape.put(part.get("Name"), new Shape(part.get("Name"), stats.get("Damage"), stats.get("Piercing"),
-                        stats.get("Speed"), stats.get("Power"), stats.get("Value")));
-            }
-            if (part.get("type").contains("Solid")) {
-                allProjectile.put(part.get("Name"), new Projectile(part.get("Name"), part.get("Type"), stats.get("Damage"), stats.get("Piercing"),
-                        stats.get("Speed"), stats.get("Power"), stats.get("Value")));
+            //Sort into Casings
+            if (part.get("Type").contains("Casing")) {
+                allCasings.put(part.get("Name"), new Casing(part.get("Name"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
+                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
             }
         }
     }

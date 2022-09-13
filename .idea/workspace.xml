@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="CSV file now is translated into an array">
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Formatting the CSV into arrays, loadPartData() has errors.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/PartData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PartData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/PartList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/SkillList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/SkillList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Skill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/part_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/part_data.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662859428152</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Formatting the CSV into arrays, loadPartData() has errors.">
+      <created>1662864052785</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662864052785</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,13 +137,7 @@
     <MESSAGE value="another very late start on git" />
     <MESSAGE value="added the CSV file" />
     <MESSAGE value="CSV file now is translated into an array" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSV file now is translated into an array" />
-  </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="stats" />
-      </configuration>
-    </watches-manager>
+    <MESSAGE value="Formatting the CSV into arrays, loadPartData() has errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting the CSV into arrays, loadPartData() has errors." />
   </component>
 </project>

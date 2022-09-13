@@ -15,17 +15,22 @@ public class Skill {
 
     ArrayList<Element> elements;
 
-    public Skill(String name, int damage, int piercing, int speed, int power, int cost, ArrayList<Element> elements) {
+    public Skill(String name, int damage, int piercing, int speed, int power, int cost) {
         this.name = name;
         this.damage = damage;
         this.piercing = piercing;
         this.speed = speed;
         this.power = power;
         this.cost = cost;
-        this.elements = elements;
         this.attack = true;
     }
 
+    /**
+     * For non-offensive skills which do not directly deal damage.
+     * @param name Name of the skill
+     * @param speed The speed of the skill's application
+     * @param cost How much AP it costs
+     */
     public Skill(String name, int speed, int cost) {
         this.name = name;
         this.speed = speed;
@@ -33,8 +38,13 @@ public class Skill {
         this.attack = false;
     }
 
-    public Skill(String name) {
+    /**
+     * Reserved for "Shoot" skill and its clones.
+     * @param name Name of the skill
+     */
+    public Skill(String name, int cost) {
         this.name = name;
+        this.cost = cost;
         this.attack = true;
     }
 
