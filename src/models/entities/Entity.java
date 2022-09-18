@@ -11,13 +11,13 @@ public abstract class Entity {
 
     Form form;
 
-    int health;
+    double health;
 
-    int resistance;
+    double resistance;
 
     ArrayList<Element> elements;
 
-    public Entity(String name, Form form, int health, int resistance, ArrayList<Element> elements) {
+    public Entity(String name, Form form, double health, double resistance, ArrayList<Element> elements) {
         this.name = name;
         this.form = form;
         this.health = health;
@@ -41,19 +41,19 @@ public abstract class Entity {
         this.form = form;
     }
 
-    public int getHealth() {
+    public double getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
+    public void setHealth(double health) {
         this.health = health;
     }
 
-    public int getResistance() {
+    public double getResistance() {
         return resistance;
     }
 
-    public void setResistance(int resistance) {
+    public void setResistance(double resistance) {
         this.resistance = resistance;
     }
 

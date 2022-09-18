@@ -1,7 +1,6 @@
 package data;
 
 import models.Element;
-import models.Skill;
 
 import java.util.ArrayList;
 

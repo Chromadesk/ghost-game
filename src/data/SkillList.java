@@ -1,42 +1,24 @@
 package data;
 
-import models.Element;
-import models.Skill;
-
-import java.util.ArrayList;
+import models.skills.Skill;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SkillList {
 
-    private static final ArrayList<Skill> allSkills = new ArrayList<>() {
+    private static final HashMap<String, Skill> allSkills = new HashMap<>() {
         {
-            add(new Skill("Attack", 30, 0, 60, 10, 1));
-            add(new Skill("Shoot", 1));
-            add(new Skill("Reload", 1));
-            add(new Skill("Move", 30, 1));
+            put("Shoot", new Skill("Shoot", true, 0));
         }
     };
 
-    public static ArrayList<Skill> getAll() {
-        return allSkills;
-    }
-
-    public static Skill get(String name) {
-        for(Skill skill : allSkills) {
-                if (name == skill.getName()) {
-                    return skill;
-                }
-        }
-        throw new Error("Skill not found");
-    }
-
-    public static ArrayList<Skill> multi(String name) {
-        ArrayList<Skill> list = new ArrayList<>();
-        for (Skill skill : allSkills) {
-            if (name.contains(skill.getName())) {
-                list.add(skill);
+    public static HashMap<String, Skill> multi(String name) {
+        HashMap<String, Skill> list = new HashMap<>();
+        for (Map.Entry<String, Skill> set : allSkills.entrySet()) {
+            if (name.contains(set.getKey())) {
+                list.put(set.getKey(), set.getValue());
             }
         }
         return list;
     }
-
 }

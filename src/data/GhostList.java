@@ -2,29 +2,19 @@ package data;
 
 import models.Form;
 import models.entities.Ghost;
-
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GhostList {
 
-    private static final ArrayList<Ghost> allGhosts = new ArrayList<>() {
+    private static final HashMap<String, Ghost> allGhosts = new HashMap<>() {
         {
-            add(new Ghost("Ghoul", new Form("Physical"), 100, 0, ElementList.multi("Infernal Dark"),
+            put("Ghoul", new Ghost("Ghoul", new Form("Physical"), 100, 0, ElementList.multi("Infernal Dark"),
                     0, 0, 0, 3, 1, 1,
                     SkillList.multi("Attack"), 3));
         }
     };
 
-    public static ArrayList<Ghost> getAll() {
-        return allGhosts;
-    }
-
     public static Ghost get(String name) {
-        for(Ghost ghost : allGhosts) {
-            if (name == ghost.getName()) {
-                return ghost;
-            }
-        }
-        throw new Error("Ghost not found.");
+        return allGhosts.get(name);
     }
 }

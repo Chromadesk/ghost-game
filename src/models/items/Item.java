@@ -1,25 +1,22 @@
 package models.items;
 
-import models.Element;
 import models.Form;
-
-import java.util.ArrayList;
 
 public class Item {
 
-    public String name;
+    private String name;
 
-    public Form form;
+    private Form form;
 
-    public double damage;
+    private double damage;
 
-    public double piercing;
+    private double piercing;
 
-    public double speed;
+    private double speed;
 
-    public double power;
+    private double power;
 
-    public double value;
+    private double value;
 
     public Item(String name, Form form, double damage, double piercing, double speed, double power, double value) {
         this.name = name;

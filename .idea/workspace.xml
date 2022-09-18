@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Formatting the CSV into arrays, loadPartData() has errors.">
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Began working on the Game.java methods.">
+      <change afterPath="$PROJECT_DIR$/src/models/StatusEffect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/skills/Skill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/PartData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PartData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/ElementList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/ElementList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/GhostList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/GhostList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PlayerList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/SkillList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/SkillList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/part_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/part_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Skill.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Ghost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="84a296631bc66346954d4b1f62914737ce2d809a" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -78,6 +93,8 @@
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="JAR Application.commons-csv-1.9.0.jar" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.commons-csv-1.9.0.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -118,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662864052785</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed loadPartData() and began changes to Skill.java">
+      <created>1663112076220</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663112076220</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +162,8 @@
     <MESSAGE value="added the CSV file" />
     <MESSAGE value="CSV file now is translated into an array" />
     <MESSAGE value="Formatting the CSV into arrays, loadPartData() has errors." />
-    <option name="LAST_COMMIT_MESSAGE" value="Formatting the CSV into arrays, loadPartData() has errors." />
+    <MESSAGE value="Fixed loadPartData() and began changes to Skill.java" />
+    <MESSAGE value="Began working on the Game.java methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Began working on the Game.java methods." />
   </component>
 </project>
