@@ -5,6 +5,7 @@ import models.items.Bullet;
 import models.items.Item;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Skill {
     String type;
@@ -38,46 +39,7 @@ public class Skill {
         this.endsTurn = endsTurn;
         this.apCost = apCost;
     }
-    /**
-     * Defensive Type Skill Constructor
-     * @param name Name of skill
-     * @param speed Speed of skill
-     * @param healing How much health the skkill heals
-     * @param armorPhys How much physical armor the skill gives
-     * @param armorCorp How much corporeal armor the skill gives
-     * @param endsTurn If the skill ends your turn when used
-     * @param apCost If the skill does not end turn, how much AP does it cost?
-     */
-    public Skill(String name, double speed, double healing, int armorPhys, int armorCorp, boolean endsTurn, int apCost) {
-        this.type = "defensive";
-        this.name = name;
-        this.speed = speed;
-        this.damage = healing;
-        this.armorPhys = armorPhys;
-        this.armorCorp = armorCorp;
-        this.endsTurn = endsTurn;
-        this.apCost = apCost;
-    }
-    /**
-     * Dodge Type Skill Constructor
-     * @param name Name of skill
-     * @param speed Speed of skill
-     * @param endsTurn If the skill ends your turn when used
-     * @param apCost If the skill does not end turn, how much AP does it cost?
-     */
-    public Skill(String name, double speed, boolean endsTurn, int apCost) {
-        this.type = "dodge";
-        this.name = name;
-        this.speed = speed;
-        this.endsTurn = endsTurn;
-        this.apCost = apCost;
-    }
-    /**
-     * Shoot Type Skill Constructor
-     * @param name Name of skill
-     * @param endsTurn If the skill ends your turn when used
-     * @param apCost If the skill does not end turn, how much AP does it cost?
-     */
+
     public Skill(String name, boolean endsTurn, int apCost) {
         this.type = "shoot";
         this.name = name;
@@ -97,7 +59,7 @@ public class Skill {
 //    }
 
     public void setBullet(Bullet bullet) {
-        if (this.type == "shoot") {
+        if (Objects.equals(this.type, "shoot")) {
             this.speed = bullet.getSpeed();
             this.damage = bullet.getDamage();
             this.piercing = bullet.getPiercing();

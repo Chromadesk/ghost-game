@@ -28,6 +28,11 @@ public abstract class Character extends Entity {
         this.skills = skills;
     }
 
+    public void rollDefend(String name) {
+        Skill skill = skills.get(name);
+
+    }
+
     public double getArmorPhysical() {
         return armorPhysical;
     }

@@ -9,6 +9,8 @@ public class SkillList {
     private static final HashMap<String, Skill> allSkills = new HashMap<>() {
         {
             put("Shoot", new Skill("Shoot", true, 0));
+            put("Dodge Roll", new Skill("Dodge Roll", 80, true, 0));
+            put("Block", new Skill("Block", 100, false, 0));
         }
     };
 
