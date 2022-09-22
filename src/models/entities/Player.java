@@ -26,7 +26,7 @@ public class Player extends Character{
     }
 
     public Player(String name) {
-        super(name, new Form("Physical"), 100, 0, ElementList.multi("Mortal"), 0, 0, 100, 0, 2, 3, SkillList.multi("Shoot"));
+        super(name, new Form("Physical"), 100, 0, ElementList.multi("Mortal"), 0, 0, 70, 40, 2, 3, SkillList.multi("Shoot"));
         this.items = new ArrayList<>();
         this.ammo = 0;
         this.money = 10;

@@ -1,5 +1,7 @@
 package models.skills;
 
+import main.Game;
+import models.Form;
 import models.entities.Character;
 import models.items.Bullet;
 import models.items.Item;
@@ -10,6 +12,7 @@ import java.util.Objects;
 public class Skill {
     String type;
     String name;
+    Form form;
     double speed;
     double damage;
     double piercing;
@@ -29,9 +32,10 @@ public class Skill {
      * @param endsTurn If the skill ends your turn when used
      * @param apCost If the skill does not end turn, how much AP does it cost?
      */
-    public Skill(String name, double speed, double damage, double piercing, double power, boolean endsTurn, int apCost) {
+    public Skill(String name, Form form, double speed, double damage, double piercing, double power, boolean endsTurn, int apCost) {
         this.type = "offensive";
         this.name = name;
+        this.form = form;
         this.speed = speed;
         this.damage = damage;
         this.piercing = piercing;
@@ -64,23 +68,70 @@ public class Skill {
             this.damage = bullet.getDamage();
             this.piercing = bullet.getPiercing();
             this.power = bullet.getPower();
+            this.form = bullet.getForm();
         }
-        throw new Error("Cannot use setBullet on non shoot type skill.");
+        System.out.println("Error! setBullet cannot be used on non-shoot type skills.");;
     }
 
-    //TODO Apply effect to character while taking into account any potential defensive/dodge abilities of the target.
-    public void apply(Character character) {
-        if (this.type == "offensive") {
-
+    /**
+     * Activates this skill as an attack while accounting for dodge/block speed.
+     * @param character Enemy target of skill.
+     */
+    public void useAttack(Character character) {
+        if (character.rollDefend(this.speed) == "block") {
+            System.out.println(character.getName() + " blocks the attack!");
+            dealDamage(character, (int) Math.round(this.damage * 0.3));
         }
-        if (this.type == "defensive") {
-
+        if (character.rollDefend(this.speed) == "dodge") {
+            System.out.println(character.getName() + " dodges the attack!");
         }
-        if (this.type == "dodge") {
-
+        if (character.rollDefend(this.speed) == "fail") {
+            System.out.println(character.getName() + " is hit with " + this.name + "!");
         }
-        if (this.type == "shoot") {
+    }
 
+    public void dealDamage(Character character, int damage) {
+        //physical damage
+        if (this.form.getName() == "Physical") {
+            if (character.getArmorPhysical() > 0) {
+                //Decide if the damage ignores the armor or not
+                if (Game.rngPercentage(this.piercing)) {
+                    character.setHealth(character.getHealth() - damage);
+                    character.setArmorPhysical(damage - character.getArmorPhysical());
+                    return;
+                }
+                //Deal damage to armor, if armor is 100% broken subtract leftover damage from health.
+                character.setArmorPhysical(damage - character.getArmorPhysical());
+                if (character.getArmorPhysical() < 0) {
+                    character.setHealth(character.getHealth() - character.getArmorPhysical());
+                }
+                character.setHealth(character.getHealth() - damage);
+                return;
+            }
+            //If no armor, just damage health
+            character.setHealth(character.getHealth() - damage);
+            return;
+        }
+        //corporeal damage
+        if (this.form.getName() == "Corporeal" || this.form.getName() == "Mystic") {
+            if (character.getArmorCorporeal() > 0) {
+                //Decide if the damage ignores the armor or not
+                if (Game.rngPercentage(this.piercing)) {
+                    character.setHealth(character.getHealth() - damage);
+                    character.setHealth(character.getHealth() - character.getArmorCorporeal());
+                    return;
+                }
+                //Deal damage to armor, if armor is 100% broken subtract leftover damage from health.
+                character.setArmorCorporeal(damage - character.getArmorCorporeal());
+                if (character.getArmorCorporeal() < 0) {
+                    character.setHealth(character.getHealth() - character.getArmorCorporeal());
+                }
+                character.setHealth(character.getHealth() - damage);
+                return;
+            }
+            //If no armor, just damage health
+            character.setHealth(character.getHealth() - damage);
+            return;
         }
     }
 }

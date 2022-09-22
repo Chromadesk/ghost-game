@@ -43,22 +43,21 @@ public class Game {
             addCharacter();
         }
         while (true) {
-            System.out.println("\nTurn " + turn + "-----------------------------------------------------------------------------");
-            System.out.println("Select an action:");
-            System.out.println("1) Use Skill");
-            System.out.println("3) Add New Character");
-            Scanner input = new Scanner(System.in);
-            switch (input.nextInt()) {
-                case 1:
-                    System.out.println("");
-                    input.close();
-                    break;
-                case 3:
-                    addCharacter();
-                    input.close();
-                    break;
+            System.out.println("\nTurn " + turn + " -----------------------------------------------------------------------------");
+            for (Character character : characters) {
+                System.out.println(character.getName() + " - " + Math.round(character.getHealth()) + "HP " +
+                        Math.round(character.getArmorPhysical()) + " Phys Armor " +
+                        Math.round(character.getArmorCorporeal()) + " Corp Armor " +
+                        Math.round(character.getSpeedMovement()) + " Movespeed ");
             }
+            Scanner input = new Scanner(System.in);
+            String command = input.next();
         }
+    }
+
+    public static boolean rngPercentage(double num) {
+        if (num >= 100) return true;
+        return Math.round(Math.random() * 100) <= num;
     }
 
 }
