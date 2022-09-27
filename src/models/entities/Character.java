@@ -1,26 +1,25 @@
 package models.entities;
 
 import models.Element;
-import models.Form;
 import models.skills.Skill;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Character extends Entity {
-    private double armorPhysical;
-    private double armorCorporeal;
-    private double speedBlock;
-    private double speedAgility;
-    private double speedMovement;
-    private double actionPoints;
+    private int armorPhysical;
+    private int armorCorporeal;
+    private int speedBlock;
+    private int speedAgility;
+    private int speedMovement;
+    private int actionPoints;
 
     private HashMap<String, Skill> skills;
 
     /**
      * Character constructor
      * @param name Name of the character
-     * @param form Physical, Corporeal, or Mystic form
+     * @param physicalForm Physical, Corporeal, or Mystic form
      * @param health Max HP of character
      * @param resistance Stopping Power Resistance of character.
      * @param elements A list of all the character's elements.
@@ -32,8 +31,8 @@ public abstract class Character extends Entity {
      * @param actionPoints How many AP (Action Points) the player has for smaller skills.
      * @param skills A list of all the character's skills.
      */
-    public Character(String name, Form form, double health, double resistance, ArrayList<Element> elements, double armorPhysical, double armorCorporeal, double speedBlock, double speedAgility, double speedMovement, double actionPoints, HashMap<String, Skill> skills) {
-        super(name, form, health, resistance, elements);
+    public Character(String name, boolean physicalForm, int health, int resistance, ArrayList<Element> elements, int armorPhysical, int armorCorporeal, int speedBlock, int speedAgility, int speedMovement, int actionPoints, HashMap<String, Skill> skills) {
+        super(name, physicalForm, health, resistance, elements);
         this.armorPhysical = armorPhysical;
         this.armorCorporeal = armorCorporeal;
         this.speedBlock = speedBlock;
@@ -43,7 +42,7 @@ public abstract class Character extends Entity {
         this.skills = skills;
     }
 
-    public String rollDefend(double speed) {
+    public String rollDefend(int speed) {
         if (speed < this.speedBlock) {
             if (speed < this.speedAgility) return "dodge";
             return "block";
@@ -51,59 +50,60 @@ public abstract class Character extends Entity {
         return "fail";
     }
 
-    public double getArmorPhysical() {
+    public int getArmorPhysical() {
         return armorPhysical;
     }
 
-    public void setArmorPhysical(double armorPhysical) {
+    public void setArmorPhysical(int armorPhysical) {
         this.armorPhysical = armorPhysical;
     }
 
-    public double getArmorCorporeal() {
+    public int getArmorCorporeal() {
         return armorCorporeal;
     }
 
-    public void setArmorCorporeal(double armorCorporeal) {
+    public void setArmorCorporeal(int armorCorporeal) {
         this.armorCorporeal = armorCorporeal;
     }
 
-    public double getSpeedBlock() {
+    public int getSpeedBlock() {
         return speedBlock;
     }
 
-    public void setSpeedBlock(double speedBlock) {
+    public void setSpeedBlock(int speedBlock) {
         this.speedBlock = speedBlock;
     }
 
-    public double getSpeedAgility() {
+    public int getSpeedAgility() {
         return speedAgility;
     }
 
-    public void setSpeedAgility(double speedAgility) {
+    public void setSpeedAgility(int speedAgility) {
         this.speedAgility = speedAgility;
     }
 
-    public double getActionPoints() {
+    public int getActionPoints() {
         return actionPoints;
     }
 
-    public void setActionPoints(double actionPoints) {
+    public void setActionPoints(int actionPoints) {
         this.actionPoints = actionPoints;
     }
 
     public HashMap<String, Skill> getSkills() {
-        return skills;
+        return this.skills;
     }
 
     public void setSkills(HashMap<String, Skill> skills) {
         this.skills = skills;
     }
 
-    public double getSpeedMovement() {
+    public int getSpeedMovement() {
         return speedMovement;
     }
 
-    public void setSpeedMovement(double speedMovement) {
+    public void setSpeedMovement(int speedMovement) {
         this.speedMovement = speedMovement;
     }
+
 }

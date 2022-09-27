@@ -1,28 +1,32 @@
 package models.entities;
 
 import models.Element;
-import models.Form;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Entity {
 
+    private int id;
+    private static int nextId = 0;
     String name;
 
-    Form form;
+    boolean physicalForm;
 
-    double health;
+    int health;
 
-    double resistance;
+    int resistance;
 
     ArrayList<Element> elements;
 
-    public Entity(String name, Form form, double health, double resistance, ArrayList<Element> elements) {
+    public Entity(String name, boolean physicalForm, int health, int resistance, ArrayList<Element> elements) {
         this.name = name;
-        this.form = form;
+        this.physicalForm = physicalForm;
         this.health = health;
         this.resistance = resistance;
         this.elements = elements;
+        this.id = nextId;
+        nextId++;
     }
 
     public String getName() {
@@ -33,27 +37,21 @@ public abstract class Entity {
         this.name = name;
     }
 
-    public Form getForm() {
-        return form;
-    }
 
-    public void setForm(Form form) {
-        this.form = form;
-    }
 
-    public double getHealth() {
+    public int getHealth() {
         return health;
     }
 
-    public void setHealth(double health) {
+    public void setHealth(int health) {
         this.health = health;
     }
 
-    public double getResistance() {
+    public int getResistance() {
         return resistance;
     }
 
-    public void setResistance(double resistance) {
+    public void setResistance(int resistance) {
         this.resistance = resistance;
     }
 
@@ -65,18 +63,27 @@ public abstract class Entity {
         this.elements = elements;
     }
 
+    public boolean isPhysicalForm() {
+        return physicalForm;
+    }
+
+    public void setPhysicalForm(boolean physicalForm) {
+        this.physicalForm = physicalForm;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Entity entity = (Entity) o;
-
-        return name.equals(entity.name);
+        return id == entity.getId();
     }
 
     @Override
     public int hashCode() {
-        return name.hashCode();
+        return Objects.hash(id);
     }
 }

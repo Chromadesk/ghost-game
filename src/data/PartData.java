@@ -1,4 +1,5 @@
 package data;
+import main.Game;
 import models.items.bulletparts.*;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -63,30 +64,21 @@ public class PartData {
         }
     }
 
-    private static boolean isNumeric(String strNum) {
-        if (strNum == null) {
-            return false;
-        }
-        try {
-            double d = Double.parseDouble(strNum);
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
-    }
-
-    private static double makeDouble(String strNum) {
+    private static int makeInt(String strNum) {
         if (strNum.length() == 0) {
             return 0;
         }
-        return Double.parseDouble(strNum);
+        if (!Game.isNumeric(strNum)) {
+            throw new Error("makeInt failed! String is not numeric.");
+        }
+        return (int) Math.round(Double.parseDouble(strNum));
     }
 
-    private static double numberifyCash(String money) {
+    private static int numberifyCash(String money) {
         if (money.length() == 0) {
             return 0;
         }
-        return makeDouble(money.substring(2));
+        return makeInt(money.substring(2));
     }
 
     public static void loadPartData() {
@@ -94,34 +86,34 @@ public class PartData {
         for (Map<String, String> part : allParts) {
             //Sort into Projectiles
             if (part.get("Type").contains("Solid")) {
-                allProjectile.put(part.get("Name"), new Projectile(part.get("Name"), part.get("Type"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
-                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
+                allProjectile.put(part.get("Name"), new Projectile(part.get("Name"), part.get("Type"), makeInt(part.get("Damage")), makeInt(part.get("Piercing")),
+                        makeInt(part.get("Speed")), makeInt(part.get("Power")), numberifyCash(part.get("Value"))));
             }
             //Sort into Shapes
             if (part.get("Type").contains("Shape")) {
-                allShape.put(part.get("Name"), new Shape(part.get("Name"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
-                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
+                allShape.put(part.get("Name"), new Shape(part.get("Name"), makeInt(part.get("Damage")), makeInt(part.get("Piercing")),
+                        makeInt(part.get("Speed")), makeInt(part.get("Power")), numberifyCash(part.get("Value"))));
             }
 
             //Sort into Dusts/Oils
             if (part.get("Type").contains("Dust") || part.get("Type").contains("Oil")) {
-                allDust.put(part.get("Name"), new Dust(part.get("Name"), part.get("Type"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
-                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
+                allDust.put(part.get("Name"), new Dust(part.get("Name"), part.get("Type"), makeInt(part.get("Damage")), makeInt(part.get("Piercing")),
+                        makeInt(part.get("Speed")), makeInt(part.get("Power")), numberifyCash(part.get("Value"))));
             }
             //Sort into Powders
             if (part.get("Type").contains("Powder")) {
-                allPowder.put(part.get("Name"), new Powder(part.get("Name"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
-                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
+                allPowder.put(part.get("Name"), new Powder(part.get("Name"), makeInt(part.get("Damage")), makeInt(part.get("Piercing")),
+                        makeInt(part.get("Speed")), makeInt(part.get("Power")), numberifyCash(part.get("Value"))));
             }
             //Sort into Primers
             if (part.get("Type").contains("Primer")) {
-                allPrimer.put(part.get("Name"), new Primer(part.get("Name"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
-                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
+                allPrimer.put(part.get("Name"), new Primer(part.get("Name"), makeInt(part.get("Damage")), makeInt(part.get("Piercing")),
+                        makeInt(part.get("Speed")), makeInt(part.get("Power")), numberifyCash(part.get("Value"))));
             }
             //Sort into Casings
             if (part.get("Type").contains("Casing")) {
-                allCasings.put(part.get("Name"), new Casing(part.get("Name"), makeDouble(part.get("Damage")), makeDouble(part.get("Piercing")),
-                        makeDouble(part.get("Speed")), makeDouble(part.get("Power")), numberifyCash(part.get("Value"))));
+                allCasings.put(part.get("Name"), new Casing(part.get("Name"), makeInt(part.get("Damage")), makeInt(part.get("Piercing")),
+                        makeInt(part.get("Speed")), makeInt(part.get("Power")), numberifyCash(part.get("Value"))));
             }
         }
     }

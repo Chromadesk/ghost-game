@@ -1,6 +1,5 @@
 package data;
 
-import models.Form;
 import models.skills.Skill;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +8,7 @@ public class SkillList {
 
     private static final HashMap<String, Skill> allSkills = new HashMap<>() {
         {
-            put("Shoot", new Skill("Shoot", true, 0));
+            put("shoot", new Skill("Shoot", true, 0));
         }
     };
 

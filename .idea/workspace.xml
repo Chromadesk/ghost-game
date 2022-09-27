@@ -4,16 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Adding skill use option to Game.java">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons-csv-1.9.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_csv_1_9_0__2_.xml" afterDir="false" />
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Stat type change &amp; further command refining">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ghost-game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ghost-game.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/GhostList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/GhostList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/PartData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PartData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PlayerList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/SkillList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/SkillList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Form.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entities/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entities/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Ghost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Part.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/skills/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/skills/Skill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +37,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -51,17 +63,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/yisra/Downloads/java-assignment-1-techjobs-console-edition-Chromadesk-master",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yisra/IdeaProjects/coding-events-demo-enums&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yisra\Desktop\games\ghost-game\src" />
@@ -146,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663542176614</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Changed skill functionality &amp; Turn Printout">
+      <created>1663806590133</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663806590133</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +188,8 @@
     <MESSAGE value="Fixed loadPartData() and began changes to Skill.java" />
     <MESSAGE value="Began working on the Game.java methods." />
     <MESSAGE value="Adding skill use option to Game.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding skill use option to Game.java" />
+    <MESSAGE value="Changed skill functionality &amp; Turn Printout" />
+    <MESSAGE value="Stat type change &amp; further command refining" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stat type change &amp; further command refining" />
   </component>
 </project>

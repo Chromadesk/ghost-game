@@ -1,26 +1,25 @@
 package models.items;
 
-import models.Form;
 
 public class Item {
 
     private String name;
 
-    private Form form;
+    private boolean physicalForm;
 
-    private double damage;
+    private int damage;
 
-    private double piercing;
+    private int piercing;
 
-    private double speed;
+    private int speed;
 
-    private double power;
+    private int power;
 
-    private double value;
+    private int value;
 
-    public Item(String name, Form form, double damage, double piercing, double speed, double power, double value) {
+    public Item(String name, boolean physicalForm, int damage, int piercing, int speed, int power, int value) {
         this.name = name;
-        this.form = form;
+        this.physicalForm = physicalForm;
         this.damage = damage;
         this.piercing = piercing;
         this.speed = speed;
@@ -36,51 +35,51 @@ public class Item {
         this.name = name;
     }
 
-    public Form getForm() {
-        return form;
+    public boolean isPhysicalForm() {
+        return physicalForm;
     }
 
-    public void setForm(Form form) {
-        this.form = form;
+    public void setPhysicalForm(boolean physicalForm) {
+        this.physicalForm = physicalForm;
     }
 
-    public double getDamage() {
+    public int getDamage() {
         return damage;
     }
 
-    public void setDamage(double damage) {
+    public void setDamage(int damage) {
         this.damage = damage;
     }
 
-    public double getPiercing() {
+    public int getPiercing() {
         return piercing;
     }
 
-    public void setPiercing(double piercing) {
+    public void setPiercing(int piercing) {
         this.piercing = piercing;
     }
 
-    public double getSpeed() {
+    public int getSpeed() {
         return speed;
     }
 
-    public void setSpeed(double speed) {
+    public void setSpeed(int speed) {
         this.speed = speed;
     }
 
-    public double getPower() {
+    public int getPower() {
         return power;
     }
 
-    public void setPower(double power) {
+    public void setPower(int power) {
         this.power = power;
     }
 
-    public double getValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(int value) {
         this.value = value;
     }
 }

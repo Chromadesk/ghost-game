@@ -1,22 +1,18 @@
 package models.skills;
 
 import main.Game;
-import models.Form;
 import models.entities.Character;
 import models.items.Bullet;
-import models.items.Item;
-
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Skill {
     String type;
     String name;
-    Form form;
-    double speed;
-    double damage;
-    double piercing;
-    double power;
+    boolean physicalForm;
+    int speed;
+    int damage;
+    int piercing;
+    int power;
     int armorPhys;
     int armorCorp;
     boolean endsTurn;
@@ -32,10 +28,10 @@ public class Skill {
      * @param endsTurn If the skill ends your turn when used
      * @param apCost If the skill does not end turn, how much AP does it cost?
      */
-    public Skill(String name, Form form, double speed, double damage, double piercing, double power, boolean endsTurn, int apCost) {
+    public Skill(String name, boolean physicalForm, int speed, int damage, int piercing, int power, boolean endsTurn, int apCost) {
         this.type = "offensive";
         this.name = name;
-        this.form = form;
+        this.physicalForm = physicalForm;
         this.speed = speed;
         this.damage = damage;
         this.piercing = piercing;
@@ -68,7 +64,7 @@ public class Skill {
             this.damage = bullet.getDamage();
             this.piercing = bullet.getPiercing();
             this.power = bullet.getPower();
-            this.form = bullet.getForm();
+            this.physicalForm = bullet.isPhysicalForm();
         }
         System.out.println("Error! setBullet cannot be used on non-shoot type skills.");;
     }
@@ -81,57 +77,79 @@ public class Skill {
         if (character.rollDefend(this.speed) == "block") {
             System.out.println(character.getName() + " blocks the attack!");
             dealDamage(character, (int) Math.round(this.damage * 0.3));
+            dealPower(character, (int) Math.round(this.power));
         }
         if (character.rollDefend(this.speed) == "dodge") {
             System.out.println(character.getName() + " dodges the attack!");
         }
         if (character.rollDefend(this.speed) == "fail") {
             System.out.println(character.getName() + " is hit with " + this.name + "!");
+            dealDamage(character, (int) Math.round(this.damage));
+            dealPower(character, (int) Math.round(this.power));
         }
     }
 
-    public void dealDamage(Character character, int damage) {
+    private void dealDamage(Character character, int damage) {
         //physical damage
-        if (this.form.getName() == "Physical") {
+        if (this.physicalForm) {
             if (character.getArmorPhysical() > 0) {
                 //Decide if the damage ignores the armor or not
                 if (Game.rngPercentage(this.piercing)) {
                     character.setHealth(character.getHealth() - damage);
                     character.setArmorPhysical(damage - character.getArmorPhysical());
+                    System.out.println(damage + " damage pierces through the physical armor!");
                     return;
                 }
                 //Deal damage to armor, if armor is 100% broken subtract leftover damage from health.
                 character.setArmorPhysical(damage - character.getArmorPhysical());
+                System.out.println(damage + " damage to physical armor!");
                 if (character.getArmorPhysical() < 0) {
                     character.setHealth(character.getHealth() - character.getArmorPhysical());
                 }
-                character.setHealth(character.getHealth() - damage);
                 return;
             }
             //If no armor, just damage health
             character.setHealth(character.getHealth() - damage);
+            System.out.println(damage + " damage!");
             return;
         }
         //corporeal damage
-        if (this.form.getName() == "Corporeal" || this.form.getName() == "Mystic") {
-            if (character.getArmorCorporeal() > 0) {
-                //Decide if the damage ignores the armor or not
-                if (Game.rngPercentage(this.piercing)) {
-                    character.setHealth(character.getHealth() - damage);
-                    character.setHealth(character.getHealth() - character.getArmorCorporeal());
-                    return;
-                }
-                //Deal damage to armor, if armor is 100% broken subtract leftover damage from health.
-                character.setArmorCorporeal(damage - character.getArmorCorporeal());
-                if (character.getArmorCorporeal() < 0) {
-                    character.setHealth(character.getHealth() - character.getArmorCorporeal());
-                }
+        if (character.getArmorCorporeal() > 0) {
+            //Decide if the damage ignores the armor or not
+            if (Game.rngPercentage(this.piercing)) {
                 character.setHealth(character.getHealth() - damage);
+                character.setHealth(character.getHealth() - character.getArmorCorporeal());
+                System.out.println(damage + " damage pierces through the physical armor!");
+                return;
+            }
+            //Deal damage to armor, if armor is 100% broken subtract leftover damage from health.
+            character.setArmorCorporeal(damage - character.getArmorCorporeal());
+            if (character.getArmorCorporeal() < 0) {
+                character.setHealth(character.getHealth() - character.getArmorCorporeal());
+                System.out.println(damage + " damage to physical armor!");
                 return;
             }
             //If no armor, just damage health
             character.setHealth(character.getHealth() - damage);
-            return;
+            System.out.println(damage + " damage!");
         }
     }
+
+    private void dealPower(Character character, int stoppingPower) {
+        if (character.getResistance() <= stoppingPower) {
+            System.out.println(character + "is stunned!");
+        }
+    }
+
+    public void shootSkill(Character character, String bullet) {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Skill{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
 }
