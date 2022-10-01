@@ -43,7 +43,7 @@ public abstract class Character extends Entity {
         this.speedAgility = speedAgility;
         this.speedMovement = speedMovement;
         this.actionPoints = actionPoints;
-        this.skills = skills;
+        this.setSkills(skills);
     }
 
     public String rollDefend(int speed) {

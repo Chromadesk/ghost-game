@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Shoot skill done. Requires a BulletList class.">
-      <change afterPath="$PROJECT_DIR$/src/data/BulletList.java" afterDir="false" />
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Finalized reloading process">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/PartData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PartData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Part.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/skills/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/skills/Skill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664593305407</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Finalized reloading process">
+      <created>1664653803384</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664653803384</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,7 +187,8 @@
     <MESSAGE value="Changed skill functionality &amp; Turn Printout" />
     <MESSAGE value="Stat type change &amp; further command refining" />
     <MESSAGE value="Shoot skill done. Requires a BulletList class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Shoot skill done. Requires a BulletList class." />
+    <MESSAGE value="Finalized reloading process" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalized reloading process" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

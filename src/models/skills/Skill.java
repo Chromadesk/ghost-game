@@ -72,8 +72,9 @@ public class Skill {
             this.piercing = bullet.getPiercing();
             this.power = bullet.getPower();
             this.physicalForm = bullet.isPhysicalForm();
+            return;
         }
-        System.out.println("Error! setBullet cannot be used on non-shoot type skills.");;
+        System.out.println("Error! setBullet cannot be used on non-shoot type skills.");
     }
 
     public void shootSkill(Character character) {
@@ -157,7 +158,7 @@ public class Skill {
 
     private void dealPower(Character character, int stoppingPower) {
         if (character.getResistance() <= stoppingPower) {
-            System.out.println(character + "is stunned!");
+            System.out.println(character.getName() + " is stunned!");
         }
     }
 
