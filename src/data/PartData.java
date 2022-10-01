@@ -81,6 +81,9 @@ public class PartData {
         return makeInt(money.substring(2));
     }
 
+    /**
+     * Sorts all of the parts from a CSV into their respective HashMaps using the name of the part as the key.
+     */
     public static void loadPartData() {
         loadData();
         for (Map<String, String> part : allParts) {

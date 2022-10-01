@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Stat type change &amp; further command refining">
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Shoot skill done. Requires a BulletList class.">
+      <change afterPath="$PROJECT_DIR$/src/data/BulletList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PlayerList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/PartData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PartData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/entities/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/items/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Part.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/skills/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/skills/Skill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -152,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663806590133</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Shoot skill done. Requires a BulletList class.">
+      <created>1664593305407</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664593305407</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +190,22 @@
     <MESSAGE value="Adding skill use option to Game.java" />
     <MESSAGE value="Changed skill functionality &amp; Turn Printout" />
     <MESSAGE value="Stat type change &amp; further command refining" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stat type change &amp; further command refining" />
+    <MESSAGE value="Shoot skill done. Requires a BulletList class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Shoot skill done. Requires a BulletList class." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/data/SkillList.java</url>
+          <line>14</line>
+          <properties class="data.SkillList" method="multi">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

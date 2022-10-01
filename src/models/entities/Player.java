@@ -21,7 +21,7 @@ public class Player extends Character{
     }
 
     public Player(String name) {
-        super(name, true, 100, 0, ElementList.multi("Mortal"), 0, 0, 70, 40, 2, 3, SkillList.multi("Shoot"));
+        super(name, true, 100, 0, ElementList.multi("Mortal"), 0, 0, 70, 40, 2, 3, SkillList.multi("shoot"));
         this.money = 10;
     }
 

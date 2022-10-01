@@ -12,7 +12,7 @@ public class Bullet extends Item {
     Casing casing;
     public Bullet(String name, Shape shape, Projectile projectile, Powder powder, Primer primer, Casing casing) {
         super(name, true, shape.getDamage() + projectile.getDamage() + powder.getDamage() + primer.getDamage() + casing.getDamage(),
-                shape.getPiercing() + projectile.getPiercing() + + powder.getPiercing() + primer.getPiercing() + casing.getPiercing(),
+                shape.getPiercing() + projectile.getPiercing() + powder.getPiercing() + primer.getPiercing() + casing.getPiercing(),
                 shape.getSpeed() + projectile.getSpeed() + powder.getSpeed() + primer.getSpeed() + casing.getSpeed(),
                 shape.getPower() + projectile.getPower() + powder.getPower() + primer.getPower() + casing.getPower(),
                 shape.getValue() + projectile.getValue() + powder.getValue() + primer.getValue() + casing.getValue());
@@ -83,5 +83,18 @@ public class Bullet extends Item {
 
     public void setCasing(Casing casing) {
         this.casing = casing;
+    }
+    @Override
+    public String toString() {
+        if (this.dust == null) {
+            return "[" + this.getId() + "]" + " Name - " + this.getName() + " | Shape - " + this.shape.getName() +
+                    " | Projectile - " + this.projectile.getName() + " | Powder - " + this.powder.getName() +
+                    " | Primer - " + this.primer.getName() + " | Casing - " + this.casing.getName();
+        }
+
+        return "[" + this.getId() + "]" + " Name - " + this.getName() + " | Shape - " + this.shape.getName() +
+                " | Projectile - " + this.projectile.getName() + " | Powder - " + this.powder.getName() +
+                " | Dust - " + this.dust.getName() +  " | Primer - " + this.primer.getName() +
+                " | Casing - " + this.casing.getName();
     }
 }

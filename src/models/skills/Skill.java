@@ -182,16 +182,6 @@ public class Skill {
 
     @Override
     public String toString() {
-        return "Skill{" +
-                "type='" + type + '\'' +
-                ", name='" + name + '\'' +
-                ", physicalForm=" + physicalForm +
-                ", speed=" + speed +
-                ", damage=" + damage +
-                ", piercing=" + piercing +
-                ", power=" + power +
-                ", endsTurn=" + endsTurn +
-                ", apCost=" + apCost +
-                '}';
+        return type + "Skill" + " [" + name + ']' + " physicalForm=" + physicalForm + ", speed=" + speed + ", damage=" + damage + ", piercing=" + piercing + ", power=" + power + ", endsTurn=" + endsTurn + ", apCost=" + apCost;
     }
 }

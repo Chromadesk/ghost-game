@@ -1,5 +1,6 @@
 package main;
 
+import data.BulletList;
 import data.GhostList;
 import data.PlayerList;
 import models.entities.Character;
@@ -9,6 +10,7 @@ import models.items.Bullet;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Game {
 
@@ -87,46 +89,75 @@ public class Game {
                 characters.remove(getById(fields[2]));
                 return;
             }
-            System.out.println("No such system command");
+            //sys viewBullets
+            if (Objects.equals(fields[1], "viewBullets")) {
+                for (Bullet bullet : BulletList.getAll().values()) {
+                    System.out.println(bullet);
+                }
+                return;
+            }
+            //If command is not found, print this:
+            System.out.println("No such System command");
+            return;
         }
         //Character (char)
         if (Objects.equals(fields[0], "char")) {
-            Character character = characters.get(Integer.parseInt(fields[2]));
+            Character character = getById(Integer.parseInt(fields[2]));
             //char getSkills *character ID*
             if (Objects.equals(fields[1], "getSkills")) {
+                assert character != null;
                 System.out.println(character.getSkills());
                 return;
             }
             //char useSkill *user ID* *skill name* *target*
             if (Objects.equals(fields[1], "useSkill")) {
+                assert character != null;
                 character.getSkills().get(fields[3]).useAttack(PlayerList.get(fields[4]));
                 return;
             }
-            //char shootSkill *user ID* *skill name* *target*
+            //char shootSkill *user ID* *skill name* *target ID*
             if (Objects.equals(fields[1], "shootSkill")) {
+                assert character != null;
                 if (character.getClass() != Player.class) {
                     System.out.println("Inputted user is not a Player.");
                     return;
                 }
-                character.getSkills().get(fields[3]).shootSkill(PlayerList.get(fields[4]));
+                character.getSkills().get(fields[3]).shootSkill(getById(Integer.parseInt(fields[4])));
                 return;
             }
-            //char shootSkill *user ID* *ids of bullets separated by commas*
-            if (Objects.equals(fields[1], "reloadMag")) {
+            //char viewMag *user ID*
+            if (Objects.equals(fields[1], "viewMag")) {
+                assert character != null;
                 if (character.getClass() != Player.class) {
                     System.out.println("Inputted user is not a Player.");
                     return;
                 }
-                if (((Player) character).getLoadedMag().size() == 0) {
+                if (((Player) character).getLoadedMag().size() != 0) {
                     for (int i = 0; i < ((Player) character).getLoadedMag().size(); i++) {
                         System.out.println(i + "-" + ((Player) character).getLoadedMag().get(i));
                     }
                 }
                 if (((Player) character).getLoadedMag().size() == 0) System.out.println("Mag empty.");
+                System.out.println(((Player) character).getMaxMag() + " max mag size");
+                return;
             }
-
-            System.out.println("No such character command");
+            //char reloadMag *user ID* *ids of bullets separated by commas)
+            if (Objects.equals(fields[1], "reloadMag")) {
+                String[] bulletIds = fields[3].split(",");
+                ArrayList<Bullet> bullets = new ArrayList<>();
+                for (String bulletId : bulletIds) {
+                    bullets.add(BulletList.getById(Integer.parseInt(bulletId)));
+                }
+                assert character != null;
+                ((Player) character).reloadMag(bullets);
+                System.out.println(((Player) character).getLoadedMag());
+                return;
+            }
+            //If command is not found, print this:
+            System.out.println("No such Character command");
+            return;
         }
+        //If command is not found, print this:
         System.out.println("No such command");
 
     }
