@@ -2,7 +2,8 @@ package models.items;
 
 import models.items.bulletparts.*;
 
-public class Bullet extends Item{
+public class Bullet extends Item {
+
     Shape shape;
     Projectile projectile;
     Dust dust;
@@ -33,6 +34,54 @@ public class Bullet extends Item{
         this.dust = dust;
         this.powder = powder;
         this.primer = primer;
+        this.casing = casing;
+    }
+
+    public Shape getShape() {
+        return shape;
+    }
+
+    public void setShape(Shape shape) {
+        this.shape = shape;
+    }
+
+    public Projectile getProjectile() {
+        return projectile;
+    }
+
+    public void setProjectile(Projectile projectile) {
+        this.projectile = projectile;
+    }
+
+    public Dust getDust() {
+        return dust;
+    }
+
+    public void setDust(Dust dust) {
+        this.dust = dust;
+    }
+
+    public Powder getPowder() {
+        return powder;
+    }
+
+    public void setPowder(Powder powder) {
+        this.powder = powder;
+    }
+
+    public Primer getPrimer() {
+        return primer;
+    }
+
+    public void setPrimer(Primer primer) {
+        this.primer = primer;
+    }
+
+    public Casing getCasing() {
+        return casing;
+    }
+
+    public void setCasing(Casing casing) {
         this.casing = casing;
     }
 }

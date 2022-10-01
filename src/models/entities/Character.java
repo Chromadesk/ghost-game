@@ -1,6 +1,7 @@
 package models.entities;
 
 import models.Element;
+import models.items.Item;
 import models.skills.Skill;
 
 import java.util.ArrayList;
@@ -13,8 +14,11 @@ public abstract class Character extends Entity {
     private int speedAgility;
     private int speedMovement;
     private int actionPoints;
+    private boolean hasTurn;
 
     private HashMap<String, Skill> skills;
+
+    private final ArrayList<Item> items = new ArrayList<>();
 
     /**
      * Character constructor
@@ -95,6 +99,9 @@ public abstract class Character extends Entity {
     }
 
     public void setSkills(HashMap<String, Skill> skills) {
+        for (Skill skill : skills.values()) {
+            skill.setUser(this);
+        }
         this.skills = skills;
     }
 
@@ -105,5 +112,23 @@ public abstract class Character extends Entity {
     public void setSpeedMovement(int speedMovement) {
         this.speedMovement = speedMovement;
     }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void addItem(Item item) {
+        this.items.add(item);
+    }
+
+    public boolean isHasTurn() {
+        return hasTurn;
+    }
+
+    public void setHasTurn(boolean hasTurn) {
+        this.hasTurn = hasTurn;
+    }
+
+//    TODO public abstract String toString();
 
 }

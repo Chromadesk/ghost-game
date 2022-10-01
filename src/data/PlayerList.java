@@ -20,7 +20,7 @@ public class PlayerList {
         return new Player(player.getName(), player.isPhysicalForm(), player.getHealth(), player.getResistance(),
                 player.getElements(), player.getArmorPhysical(), player.getArmorCorporeal(), player.getSpeedBlock(),
                 player.getSpeedAgility(), player.getSpeedMovement(), player.getActionPoints(), player.getSkills(),
-                player.getItems(), player.getAmmo(), player.getMoney());
+                player.getMoney(), player.getMaxMag());
     }
 
 }

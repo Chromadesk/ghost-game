@@ -3,6 +3,9 @@ package models.items;
 
 public class Item {
 
+    private final int id;
+    private static int nextId = 0;
+
     private String name;
 
     private boolean physicalForm;
@@ -25,6 +28,12 @@ public class Item {
         this.speed = speed;
         this.power = power;
         this.value = value;
+        this.id = nextId;
+        nextId++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

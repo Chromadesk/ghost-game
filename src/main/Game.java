@@ -3,6 +3,8 @@ package main;
 import data.GhostList;
 import data.PlayerList;
 import models.entities.Character;
+import models.entities.Player;
+import models.items.Bullet;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -89,22 +91,40 @@ public class Game {
         }
         //Character (char)
         if (Objects.equals(fields[0], "char")) {
-            Character character = PlayerList.get(fields[2]);
-            //char getSkills *character*
+            Character character = characters.get(Integer.parseInt(fields[2]));
+            //char getSkills *character ID*
             if (Objects.equals(fields[1], "getSkills")) {
                 System.out.println(character.getSkills());
                 return;
             }
-            //char useSkill *user* *skill name* *target*
+            //char useSkill *user ID* *skill name* *target*
             if (Objects.equals(fields[1], "useSkill")) {
                 character.getSkills().get(fields[3]).useAttack(PlayerList.get(fields[4]));
                 return;
             }
-            //char set *character* *stat* *num*
-//            if (fields[1] == "set") {
-//                character.set
-//                return;
-//            }
+            //char shootSkill *user ID* *skill name* *target*
+            if (Objects.equals(fields[1], "shootSkill")) {
+                if (character.getClass() != Player.class) {
+                    System.out.println("Inputted user is not a Player.");
+                    return;
+                }
+                character.getSkills().get(fields[3]).shootSkill(PlayerList.get(fields[4]));
+                return;
+            }
+            //char shootSkill *user ID* *ids of bullets separated by commas*
+            if (Objects.equals(fields[1], "reloadMag")) {
+                if (character.getClass() != Player.class) {
+                    System.out.println("Inputted user is not a Player.");
+                    return;
+                }
+                if (((Player) character).getLoadedMag().size() == 0) {
+                    for (int i = 0; i < ((Player) character).getLoadedMag().size(); i++) {
+                        System.out.println(i + "-" + ((Player) character).getLoadedMag().get(i));
+                    }
+                }
+                if (((Player) character).getLoadedMag().size() == 0) System.out.println("Mag empty.");
+            }
+
             System.out.println("No such character command");
         }
         System.out.println("No such command");
