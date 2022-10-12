@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public class Skill {
     //TODO Make healing, armor giving, supporting, etc all those kinds of skills work.
+    //TODO Replace "type" with a Skill interface and multiple skill classes that implement it.
     private final int id;
     private static int nextId = 0;
     String type;
