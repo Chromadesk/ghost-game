@@ -1,6 +1,7 @@
 package models.entities;
 
 import models.Element;
+import models.StatusEffect;
 import models.items.Item;
 import models.skills.Skill;
 
@@ -19,6 +20,7 @@ public abstract class Character extends Entity {
     private HashMap<String, Skill> skills;
 
     private final ArrayList<Item> items = new ArrayList<>();
+    private final ArrayList<StatusEffect> statusEffects = new ArrayList<>();
 
     /**
      * Character constructor
@@ -52,6 +54,14 @@ public abstract class Character extends Entity {
             return "block";
         }
         return "fail";
+    }
+
+    public ArrayList<StatusEffect> getStatusEffects() {
+        return statusEffects;
+    }
+
+    public void addStatusEffect(StatusEffect statusEffect) {
+        this.statusEffects.add(statusEffect);
     }
 
     public int getArmorPhysical() {

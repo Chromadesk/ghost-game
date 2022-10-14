@@ -1,18 +1,16 @@
 package models.skills;
 
 import main.Game;
+import models.IdentifiableObject;
 import models.entities.Character;
 import models.entities.Player;
 import models.items.Bullet;
 import java.util.Objects;
 
-public class Skill {
+public class Skill extends IdentifiableObject {
     //TODO Make healing, armor giving, supporting, etc all those kinds of skills work.
     //TODO Replace "type" with a Skill interface and multiple skill classes that implement it.
-    private final int id;
-    private static int nextId = 0;
     String type;
-    String name;
     boolean physicalForm;
     int speed;
     int damage;
@@ -33,8 +31,8 @@ public class Skill {
      * @param apCost If the skill does not end turn, how much AP does it cost?
      */
     public Skill(String name, boolean physicalForm, int speed, int damage, int piercing, int power, boolean endsTurn, int apCost) {
+        super(name);
         this.type = "offensive";
-        this.name = name;
         this.physicalForm = physicalForm;
         this.speed = speed;
         this.damage = damage;
@@ -42,17 +40,13 @@ public class Skill {
         this.power = power;
         this.endsTurn = endsTurn;
         this.apCost = apCost;
-        this.id = nextId;
-        nextId++;
     }
 
     public Skill(String name, boolean endsTurn, int apCost) {
+        super(name);
         this.type = "shoot";
-        this.name = name;
         this.endsTurn = endsTurn;
         this.apCost = apCost;
-        this.id = nextId;
-        nextId++;
     }
     //TODO - make martial arts close quarters skills dependent on the item & character's strength
 //    public Skill(String name, Item item, Character character, boolean endsTurn, int apCost) {
@@ -100,7 +94,7 @@ public class Skill {
             System.out.println(character.getName() + " dodges the attack!");
         }
         if (character.rollDefend(this.speed) == "fail") {
-            System.out.println(character.getName() + " is hit with " + this.name + "!");
+            System.out.println(character.getName() + " is hit with " + this.getName() + "!");
             dealDamage(character, (int) Math.round(this.damage));
             dealPower(character, (int) Math.round(this.power));
         }
@@ -170,9 +164,6 @@ public class Skill {
         if (this.endsTurn) user.setHasTurn(false);
     }
 
-    public int getId() {
-        return id;
-    }
 
     public Character getUser() {
         return user;
@@ -184,6 +175,6 @@ public class Skill {
 
     @Override
     public String toString() {
-        return type + "Skill" + " [" + name + ']' + " physicalForm=" + physicalForm + ", speed=" + speed + ", damage=" + damage + ", piercing=" + piercing + ", power=" + power + ", endsTurn=" + endsTurn + ", apCost=" + apCost;
+        return type + "Skill" + " [" + this.getName() + ']' + " physicalForm=" + physicalForm + ", speed=" + speed + ", damage=" + damage + ", piercing=" + piercing + ", power=" + power + ", endsTurn=" + endsTurn + ", apCost=" + apCost;
     }
 }

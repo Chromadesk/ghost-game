@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Shoot Skill works!">
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/src/data/StatusEffectList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/IdentifiableObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/skills/BaseSkill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/BulletList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/BulletList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/ElementList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/ElementList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/StatusEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/StatusEffect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/skills/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/skills/Skill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -25,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Skill_Functionality_Change" />
+        <entry key="$PROJECT_DIR$" value="ShootSkill" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,10 +88,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.commons-csv-1.9.0.jar" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JAR Application.commons-csv-1.9.0.jar" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JAR Application.commons-csv-1.9.0.jar" />
       </list>
     </recent_temporary>
   </component>

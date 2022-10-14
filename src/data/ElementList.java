@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class ElementList {
 
+    //TODO - remake to fit like the rest of the lists
+
     private static final ArrayList<Element> allElements = new ArrayList<>() {
         {
             add(new Element("Dark"));
