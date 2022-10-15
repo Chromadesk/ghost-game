@@ -104,16 +104,16 @@ public class Skill extends IdentifiableObject {
      * @param character Enemy target of skill.
      */
     public void useAttack(Character character) {
-        if (character.rollDefend(this.speed) == "block") {
+        if (Objects.equals(character.rollDefend(this.speed), "block")) {
             System.out.println(character.getName() + " blocks the attack!");
             dealDamage(character, (int) Math.round(this.damage * 0.3));
             dealPower(character, (int) Math.round(this.power));
             dealEffects(character);
         }
-        if (character.rollDefend(this.speed) == "dodge") {
+        if (Objects.equals(character.rollDefend(this.speed), "dodge")) {
             System.out.println(character.getName() + " dodges the attack!");
         }
-        if (character.rollDefend(this.speed) == "fail") {
+        if (Objects.equals(character.rollDefend(this.speed), "fail")) {
             System.out.println(character.getName() + " is hit with " + this.getName() + "!");
             dealDamage(character, (int) Math.round(this.damage));
             dealPower(character, (int) Math.round(this.power));

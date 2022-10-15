@@ -17,10 +17,10 @@ public class PlayerList {
 
     public static Player construct(String key) {
         Player player = allPlayers.get(key);
-        return new Player(player.getName(), player.isPhysicalForm(), player.getHealth(), player.getResistance(),
-                player.getElements(), player.getArmorPhysical(), player.getArmorCorporeal(), player.getSpeedBlock(),
-                player.getSpeedAgility(), player.getSpeedMovement(), player.getActionPoints(), player.getSkills(),
-                player.getMoney(), player.getMaxMag());
+        return new Player(player.getName(), player.isDefaultPhysicalForm(), player.getDefaultHealth(), player.getDefaultResistance(),
+                player.getDefaultElements(), player.getDefaultArmorPhysical(), player.getDefaultArmorCorporeal(), player.getDefaultSpeedBlock(),
+                player.getDefaultSpeedAgility(), player.getDefaultSpeedMovement(), player.getDefaultActionPoints(), player.getDefaultSkills(),
+                player.getMoney(), player.getMaxMag(), player.getDefaultSoul());
     }
 
 }

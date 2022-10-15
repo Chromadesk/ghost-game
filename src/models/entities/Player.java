@@ -12,12 +12,15 @@ import java.util.HashMap;
 public class Player extends Character{
     private double money;
     private int maxMag = 6;
+    private int defaultSoul;
+    private int soul = defaultSoul;
     private ArrayList<Bullet> loadedMag = new ArrayList<>();
 
-    public Player(String name, boolean physicalForm, int health, int resistance, ArrayList<Element> elements, int armorPhysical, int armorCorporeal, int speedBlock, int speedAgility, int speedMovement, int actionPoints, HashMap<String, Skill> skills, double money, int maxMag) {
+    public Player(String name, boolean physicalForm, int health, int resistance, ArrayList<Element> elements, int armorPhysical, int armorCorporeal, int speedBlock, int speedAgility, int speedMovement, int actionPoints, HashMap<String, Skill> skills, double money, int maxMag, int soul) {
         super(name, physicalForm, health, resistance, elements, armorPhysical, armorCorporeal, speedBlock, speedAgility, speedMovement, actionPoints, skills);
         this.money = money;
         this.maxMag = maxMag;
+        this.defaultSoul = soul;
     }
 
     public Player(String name) {
@@ -49,6 +52,26 @@ public class Player extends Character{
         Bullet bullet = this.loadedMag.get(0);
         this.loadedMag.remove(0);
         return bullet;
+    }
+
+    public int getDefaultSoul() {
+        return defaultSoul;
+    }
+
+    public void setDefaultSoul(int defaultSoul) {
+        this.defaultSoul = defaultSoul;
+    }
+
+    public int getSoul() {
+        return soul;
+    }
+
+    public void setSoul(int soul) {
+        this.soul = soul;
+    }
+
+    public void setLoadedMag(ArrayList<Bullet> loadedMag) {
+        this.loadedMag = loadedMag;
     }
 
     public int getMaxMag() {

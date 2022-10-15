@@ -10,6 +10,13 @@ import java.util.HashMap;
 
 public abstract class Character extends Entity {
     //TODO Make "MAX" stats so that a character can be healed to their maximum health value.
+    private int defaultArmorPhysical;
+    private int defaultArmorCorporeal;
+    private int defaultSpeedBlock;
+    private int defaultSpeedAgility;
+    private int defaultSpeedMovement;
+    private int defaultActionPoints;
+
     private int armorPhysical;
     private int armorCorporeal;
     private int speedBlock;
@@ -17,8 +24,9 @@ public abstract class Character extends Entity {
     private int speedMovement;
     private int actionPoints;
 
-    private HashMap<String, Skill> skills;
+    private HashMap<String, Skill> defaultSkills;
 
+    private HashMap<String, Skill> skills;
     private final ArrayList<Item> items = new ArrayList<>();
     private final ArrayList<StatusEffect> statusEffects = new ArrayList<>();
 
@@ -39,21 +47,81 @@ public abstract class Character extends Entity {
      */
     public Character(String name, boolean physicalForm, int health, int resistance, ArrayList<Element> elements, int armorPhysical, int armorCorporeal, int speedBlock, int speedAgility, int speedMovement, int actionPoints, HashMap<String, Skill> skills) {
         super(name, physicalForm, health, resistance, elements);
-        this.armorPhysical = armorPhysical;
-        this.armorCorporeal = armorCorporeal;
-        this.speedBlock = speedBlock;
-        this.speedAgility = speedAgility;
-        this.speedMovement = speedMovement;
-        this.actionPoints = actionPoints;
-        this.setSkills(skills);
+        this.defaultArmorPhysical = armorPhysical;
+        this.defaultArmorCorporeal = armorCorporeal;
+        this.defaultSpeedBlock = speedBlock;
+        this.defaultSpeedAgility = speedAgility;
+        this.defaultSpeedMovement = speedMovement;
+        this.defaultActionPoints = actionPoints;
+        this.setDefaultSkills(skills);
     }
 
+    //TODO remove
     public String rollDefend(int speed) {
         if (speed < this.speedBlock) {
             if (speed < this.speedAgility) return "dodge";
             return "block";
         }
         return "fail";
+    }
+
+    public int getDefaultArmorPhysical() {
+        return defaultArmorPhysical;
+    }
+
+    public void setDefaultArmorPhysical(int defaultArmorPhysical) {
+        this.defaultArmorPhysical = defaultArmorPhysical;
+    }
+
+    public int getDefaultArmorCorporeal() {
+        return defaultArmorCorporeal;
+    }
+
+    public void setDefaultArmorCorporeal(int defaultArmorCorporeal) {
+        this.defaultArmorCorporeal = defaultArmorCorporeal;
+    }
+
+    public int getDefaultSpeedBlock() {
+        return defaultSpeedBlock;
+    }
+
+    public void setDefaultSpeedBlock(int defaultSpeedBlock) {
+        this.defaultSpeedBlock = defaultSpeedBlock;
+    }
+
+    public int getDefaultSpeedAgility() {
+        return defaultSpeedAgility;
+    }
+
+    public void setDefaultSpeedAgility(int defaultSpeedAgility) {
+        this.defaultSpeedAgility = defaultSpeedAgility;
+    }
+
+    public int getDefaultSpeedMovement() {
+        return defaultSpeedMovement;
+    }
+
+    public void setDefaultSpeedMovement(int defaultSpeedMovement) {
+        this.defaultSpeedMovement = defaultSpeedMovement;
+    }
+
+    public int getDefaultActionPoints() {
+        return defaultActionPoints;
+    }
+
+    public void setDefaultActionPoints(int defaultActionPoints) {
+        this.defaultActionPoints = defaultActionPoints;
+    }
+
+    public HashMap<String, Skill> getDefaultSkills() {
+        return defaultSkills;
+    }
+
+    public void setDefaultSkills(HashMap<String, Skill> skills) {
+        for (Skill skill : skills.values()) {
+            skill.setUser(this);
+        }
+        this.defaultSkills = skills;
     }
 
     public ArrayList<StatusEffect> getStatusEffects() {
