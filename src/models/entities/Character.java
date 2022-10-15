@@ -1,7 +1,7 @@
 package models.entities;
 
-import models.Element;
-import models.StatusEffect;
+import models.elements.Element;
+import models.statuseffects.StatusEffect;
 import models.items.Item;
 import models.skills.Skill;
 

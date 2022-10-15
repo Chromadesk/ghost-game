@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Status Effect Work &amp; More Changes">
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Minor changes">
+      <change afterPath="$PROJECT_DIR$/src/models/skills/SkillStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/PlayerList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/ElementList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/ElementList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/StatusEffectList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StatusEffectList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/elements/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/StatusEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/statuseffects/StatusEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entities/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Ghost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/skills/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/skills/Skill.java" afterDir="false" />
     </list>
@@ -186,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665863349896</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Minor changes">
+      <created>1665864407383</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1665864407383</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,7 +228,8 @@
     <MESSAGE value="Shoot Skill works!" />
     <MESSAGE value="Status Effect Work" />
     <MESSAGE value="Status Effect Work &amp; More Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Status Effect Work &amp; More Changes" />
+    <MESSAGE value="Minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,6 +1,6 @@
 package data;
 
-import models.StatusEffect;
+import models.statuseffects.StatusEffect;
 
 import java.util.HashMap;
 

@@ -2,7 +2,7 @@ package models.entities;
 
 import data.ElementList;
 import data.SkillList;
-import models.Element;
+import models.elements.Element;
 import models.items.Bullet;
 import models.skills.Skill;
 

@@ -1,6 +1,6 @@
 package data;
 
-import models.Element;
+import models.elements.Element;
 
 import java.util.ArrayList;
 

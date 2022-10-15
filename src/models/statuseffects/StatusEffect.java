@@ -1,5 +1,6 @@
-package models;
+package models.statuseffects;
 
+import models.IdentifiableObject;
 import models.entities.Character;
 
 public class StatusEffect extends IdentifiableObject {

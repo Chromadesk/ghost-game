@@ -1,6 +1,6 @@
 package models.entities;
 
-import models.Element;
+import models.elements.Element;
 import models.skills.Skill;
 
 import java.util.ArrayList;

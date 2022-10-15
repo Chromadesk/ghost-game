@@ -1,10 +1,9 @@
 package models.entities;
 
-import models.Element;
+import models.elements.Element;
 import models.IdentifiableObject;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public abstract class Entity extends IdentifiableObject {
     boolean defaultPhysicalForm;

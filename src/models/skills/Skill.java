@@ -2,7 +2,7 @@ package models.skills;
 
 import main.Game;
 import models.IdentifiableObject;
-import models.StatusEffect;
+import models.statuseffects.StatusEffect;
 import models.entities.Character;
 import models.entities.Player;
 import models.items.Bullet;
