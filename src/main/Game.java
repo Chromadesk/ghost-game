@@ -75,6 +75,23 @@ public class Game {
         String[] fields = command.split(" ");
         //System (sys)
         if (Objects.equals(fields[0], "sys")) {
+            //sys commands or sys help
+            if (Objects.equals(fields[1], "commands") || Objects.equals(fields[1], "help")) {
+                System.out.println("System Commands ------");
+                System.out.println("help - Lists all console commands");
+                System.out.println("addChar - Injects a new character into the game.");
+                System.out.println("kill - Forcefully removes a character from the game.");
+                System.out.println("viewBullets - Prints all existing bullets to console.");
+
+                System.out.println("Character Commands ------");
+                System.out.println("getSkills *charID* - Prints all skills of given character.");
+                System.out.println("useSkill *userID* *skillname* *targetID* - NOT FOR SHOOT SKILLS! Uses the given character's given skill on the given target.");
+                System.out.println("shootSkill *userID* *skillname *targetID* - ONLY FOR SHOOT SKILLS! Uses the given character's given shoot-type skill on the given target.");
+                System.out.println("viewMag *charID* - Prints the current loaded mag of the given character.");
+                System.out.println("reloadMag *charID* *bulletIDs - Overwrites the given character's mag with a new mag of bullets using a string of bullet IDs seperated by commas.");
+
+                return;
+            }
             //sys addChar
             if (Objects.equals(fields[1], "addChar")) {
                 addCharacter();

@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Character extends Entity {
+    //TODO Make "MAX" stats so that a character can be healed to their maximum health value.
     private int armorPhysical;
     private int armorCorporeal;
     private int speedBlock;
     private int speedAgility;
     private int speedMovement;
     private int actionPoints;
-    private boolean hasTurn;
 
     private HashMap<String, Skill> skills;
 
@@ -129,14 +129,6 @@ public abstract class Character extends Entity {
 
     public void addItem(Item item) {
         this.items.add(item);
-    }
-
-    public boolean isHasTurn() {
-        return hasTurn;
-    }
-
-    public void setHasTurn(boolean hasTurn) {
-        this.hasTurn = hasTurn;
     }
 
 //    TODO public abstract String toString();

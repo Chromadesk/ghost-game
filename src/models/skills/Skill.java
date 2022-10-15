@@ -2,10 +2,12 @@ package models.skills;
 
 import main.Game;
 import models.IdentifiableObject;
+import models.StatusEffect;
 import models.entities.Character;
 import models.entities.Player;
 import models.items.Bullet;
-import java.util.Objects;
+
+import java.util.*;
 
 public class Skill extends IdentifiableObject {
     //TODO Make healing, armor giving, supporting, etc all those kinds of skills work.
@@ -19,6 +21,8 @@ public class Skill extends IdentifiableObject {
     boolean endsTurn;
     int apCost;
     Character user;
+    //The status effect, then the duration of the effect
+    HashMap<StatusEffect, Integer> statusEffects = new HashMap<>();
 
     /**
      * Offensive Type Skill Constructor
@@ -40,6 +44,18 @@ public class Skill extends IdentifiableObject {
         this.power = power;
         this.endsTurn = endsTurn;
         this.apCost = apCost;
+    }
+    public Skill(String name, boolean physicalForm, int speed, int damage, int piercing, int power, boolean endsTurn, int apCost, HashMap<StatusEffect, Integer> statusEffects) {
+        super(name);
+        this.type = "offensive";
+        this.physicalForm = physicalForm;
+        this.speed = speed;
+        this.damage = damage;
+        this.piercing = piercing;
+        this.power = power;
+        this.endsTurn = endsTurn;
+        this.apCost = apCost;
+        this.statusEffects = statusEffects;
     }
 
     public Skill(String name, boolean endsTurn, int apCost) {
@@ -73,6 +89,10 @@ public class Skill extends IdentifiableObject {
     }
 
     public void shootSkill(Character character) {
+        if (!Objects.equals(this.type, "shoot")) {
+            useAttack(character);
+            return;
+        }
         if (((Player) user).getLoadedMag().size() == 0) System.out.println("No ammo!");
         setBullet(((Player) user).shootBullet());
         useAttack(character);
@@ -84,11 +104,11 @@ public class Skill extends IdentifiableObject {
      * @param character Enemy target of skill.
      */
     public void useAttack(Character character) {
-        dealTurn();
         if (character.rollDefend(this.speed) == "block") {
             System.out.println(character.getName() + " blocks the attack!");
             dealDamage(character, (int) Math.round(this.damage * 0.3));
             dealPower(character, (int) Math.round(this.power));
+            dealEffects(character);
         }
         if (character.rollDefend(this.speed) == "dodge") {
             System.out.println(character.getName() + " dodges the attack!");
@@ -97,6 +117,7 @@ public class Skill extends IdentifiableObject {
             System.out.println(character.getName() + " is hit with " + this.getName() + "!");
             dealDamage(character, (int) Math.round(this.damage));
             dealPower(character, (int) Math.round(this.power));
+            dealEffects(character);
         }
     }
 
@@ -157,16 +178,86 @@ public class Skill extends IdentifiableObject {
         }
     }
 
-
-
-    private void dealTurn() {
-        user.setActionPoints(user.getActionPoints() - this.apCost);
-        if (this.endsTurn) user.setHasTurn(false);
+    private void dealEffects(Character character) {
+        for (Map.Entry<StatusEffect, Integer> effectPair : statusEffects.entrySet()) {
+            effectPair.getKey().use(this.user, character, effectPair.getValue());
+        }
     }
-
 
     public Character getUser() {
         return user;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public boolean isPhysicalForm() {
+        return physicalForm;
+    }
+
+    public void setPhysicalForm(boolean physicalForm) {
+        this.physicalForm = physicalForm;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getPiercing() {
+        return piercing;
+    }
+
+    public void setPiercing(int piercing) {
+        this.piercing = piercing;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+    public boolean isEndsTurn() {
+        return endsTurn;
+    }
+
+    public void setEndsTurn(boolean endsTurn) {
+        this.endsTurn = endsTurn;
+    }
+
+    public int getApCost() {
+        return apCost;
+    }
+
+    public void setApCost(int apCost) {
+        this.apCost = apCost;
+    }
+
+    public HashMap<StatusEffect, Integer> getStatusEffects() {
+        return statusEffects;
+    }
+
+    public void setStatusEffects(HashMap<StatusEffect, Integer> statusEffects) {
+        this.statusEffects = statusEffects;
     }
 
     public void setUser(Character user) {

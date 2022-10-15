@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/src/data/StatusEffectList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/IdentifiableObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/skills/BaseSkill.java" afterDir="false" />
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Status Effect Work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/BulletList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/BulletList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/ElementList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/ElementList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/StatusEffectList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StatusEffectList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Map.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/StatusEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/StatusEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entities/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/skills/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/skills/Skill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +88,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.commons-csv-1.9.0.jar" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.commons-csv-1.9.0.jar" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JAR Application.commons-csv-1.9.0.jar" />
         <item itemvalue="Application.Main" />
@@ -175,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664654614229</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Status Effect Work">
+      <created>1665775881463</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665775881463</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,7 +210,8 @@
     <MESSAGE value="Shoot skill done. Requires a BulletList class." />
     <MESSAGE value="Finalized reloading process" />
     <MESSAGE value="Shoot Skill works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shoot Skill works!" />
+    <MESSAGE value="Status Effect Work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Status Effect Work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

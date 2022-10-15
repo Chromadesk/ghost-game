@@ -16,7 +16,7 @@ public class StatusEffectList {
                     "%-10",
                     "%-10",
                     "%-10",
-                    ""));
+                    "-1"));
         }
     };
 

@@ -1,15 +1,13 @@
 package models.entities;
 
 import models.Element;
+import models.IdentifiableObject;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-public abstract class Entity {
-
-    private int id;
-    private static int nextId = 0;
-    String name;
+public abstract class Entity extends IdentifiableObject {
+    //TODO Make "MAX" stats so that a character can be healed to their maximum health value.
 
     boolean physicalForm;
 
@@ -20,24 +18,12 @@ public abstract class Entity {
     ArrayList<Element> elements;
 
     public Entity(String name, boolean physicalForm, int health, int resistance, ArrayList<Element> elements) {
-        this.name = name;
+        super(name);
         this.physicalForm = physicalForm;
         this.health = health;
         this.resistance = resistance;
         this.elements = elements;
-        this.id = nextId;
-        nextId++;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
 
     public int getHealth() {
         return health;
@@ -69,21 +55,5 @@ public abstract class Entity {
 
     public void setPhysicalForm(boolean physicalForm) {
         this.physicalForm = physicalForm;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Entity entity = (Entity) o;
-        return id == entity.getId();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 }

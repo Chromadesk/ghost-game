@@ -38,7 +38,7 @@ public class StatusEffect extends IdentifiableObject {
         this.applyAll();
     };
 
-    public void applyAll() {
+    private void applyAll() {
         applied.setHealth(stringFunctionToNum(effectHealth, applied.getHealth()));
         applied.setResistance(stringFunctionToNum(effectResistance, applied.getResistance()));
         applied.setArmorPhysical(stringFunctionToNum(effectArmorPhysical, applied.getArmorPhysical()));
