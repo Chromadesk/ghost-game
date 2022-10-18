@@ -1,10 +1,14 @@
 package models.items.bulletparts;
 
+import models.StatGroup;
 import models.items.Part;
+
+import java.util.HashMap;
 
 public class Dust extends Part {
 
-    public Dust(String name, String type, int damage, int piercing, int speed, int power, int value) {
-        super(name, type, true, damage, piercing, speed, power, value);
+    public Dust(String name, String type, boolean physicalForm, HashMap<String, StatGroup> stats, int value) {
+        super(name, type, physicalForm, stats, value);
     }
+
 }

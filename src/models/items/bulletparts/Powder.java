@@ -1,10 +1,14 @@
 package models.items.bulletparts;
 
+import models.StatGroup;
 import models.items.Part;
+
+import java.util.HashMap;
 
 public class Powder extends Part {
 
-    public Powder(String name, int damage, int piercing, int speed, int power, int value) {
-        super(name, "Powder", true, damage, piercing, speed, power, value);
+    public Powder(String name, boolean physicalForm, HashMap<String, StatGroup> stats, int value) {
+        super(name, "Powder", physicalForm, stats, value);
     }
+
 }

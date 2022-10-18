@@ -1,47 +1,32 @@
 package models.items;
 
 
-public class Item {
+import models.IdentifiableObject;
+import models.StatGroup;
 
-    private final int id;
-    private static int nextId = 0;
+import java.util.HashMap;
 
-    private String name;
+public class Item extends IdentifiableObject {
 
-    private boolean physicalForm;
+    HashMap<String, StatGroup> stats;
 
-    private int damage;
-
-    private int piercing;
-
-    private int speed;
-
-    private int power;
+    boolean physicalForm;
 
     private int value;
 
-    public Item(String name, boolean physicalForm, int damage, int piercing, int speed, int power, int value) {
-        this.name = name;
+    public Item(String name, boolean physicalForm, HashMap<String, StatGroup> stats, int value) {
+        super(name);
         this.physicalForm = physicalForm;
-        this.damage = damage;
-        this.piercing = piercing;
-        this.speed = speed;
-        this.power = power;
+        this.stats = stats;
         this.value = value;
-        this.id = nextId;
-        nextId++;
     }
 
-    public int getId() {
-        return id;
+    public HashMap<String, StatGroup> getStats() {
+        return stats;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setStats(HashMap<String, StatGroup> stats) {
+        this.stats = stats;
     }
 
     public boolean isPhysicalForm() {
@@ -50,38 +35,6 @@ public class Item {
 
     public void setPhysicalForm(boolean physicalForm) {
         this.physicalForm = physicalForm;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
-    public int getPiercing() {
-        return piercing;
-    }
-
-    public void setPiercing(int piercing) {
-        this.piercing = piercing;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public int getPower() {
-        return power;
-    }
-
-    public void setPower(int power) {
-        this.power = power;
     }
 
     public int getValue() {

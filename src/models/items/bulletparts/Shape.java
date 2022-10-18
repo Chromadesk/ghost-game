@@ -1,10 +1,12 @@
 package models.items.bulletparts;
 
+import models.StatGroup;
 import models.items.Part;
 
-public class Shape extends Part {
+import java.util.HashMap;
 
-    public Shape (String name, int damage, int piercing, int speed, int power, int value) {
-        super(name, "Shape", true, damage, piercing, speed, power, value);
+public class Shape extends Part {
+    public Shape(String name, boolean physicalForm, HashMap<String, StatGroup> stats, int value, String type) {
+        super(name, physicalForm, stats, value, type);
     }
 }

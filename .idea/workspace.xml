@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Minor changes">
-      <change afterPath="$PROJECT_DIR$/src/models/skills/SkillStats.java" afterDir="false" />
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Added SkillStats">
+      <change afterPath="$PROJECT_DIR$/src/main/ConsoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/ElementList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/ElementList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/StatusEffectList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/StatusEffectList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/elements/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/StatusEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/statuseffects/StatusEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/entities/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/entities/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Part.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/skills/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/skills/Skill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/skills/SkillStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/StatGroup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665864407383</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added SkillStats">
+      <created>1665865592210</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1665865592210</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,7 +238,8 @@
     <MESSAGE value="Status Effect Work" />
     <MESSAGE value="Status Effect Work &amp; More Changes" />
     <MESSAGE value="Minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
+    <MESSAGE value="Added SkillStats" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SkillStats" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
