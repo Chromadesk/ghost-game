@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Most classes which contain offensive stats have a map of StatGroup objects.
  * This allows each class to have differing effects depending on which StatGroup is called.
- * Each Stat Group must be named "objName_statGrpName" and there must be one Default stat group in every
+ * Each Stat Group must be named "statGrpName" and there must be one "default" stat group in every
  * class, the other stat groups must be named elements so that they may be called whenever the object is
  * used against said element.
  */
@@ -24,7 +24,7 @@ public class StatGroup extends IdentifiableObject {
 
     /**
      *
-     * @param name Name as "objectName_statGroupName". EX: leadProjectile_default
+     * @param name Name as "statGroupName". EX: "default", "burning", "phantom",
      * @param speed How fast the object will move. EX: Default human speed is 70 block, 50 dodge.
      * @param damage How much base damage the object will deal upon a successful hit. EX: Default bullet does 100 damage.
      * @param piercing What percentage of damage is added when hitting armor. EX: 50 pierce = +50% damage to armor.
@@ -43,6 +43,24 @@ public class StatGroup extends IdentifiableObject {
             effect.setDuration(effectPair.getValue());
             this.statusEffects.add(effect);
         }
+    }
+
+    /**
+     * Alternative Status Effect Constructor
+     * @param name Name as "statGroupName". EX: "default", "burning", "phantom",
+     * @param speed How fast the object will move. EX: Default human speed is 70 block, 50 dodge.
+     * @param damage How much base damage the object will deal upon a successful hit. EX: Default bullet does 100 damage.
+     * @param piercing What percentage of damage is added when hitting armor. EX: 50 pierce = +50% damage to armor.
+     * @param power How much stopping power the object has. EX: Default bullet is 10 power, default person is 0 resistance.
+     * @param statusEffects USE ONLY IF ALL STATUS EFFECTS HAVE PRE-SET DURATIONS!
+     */
+    public StatGroup(String name, int speed, int damage, int piercing, int power, ArrayList<StatusEffect> statusEffects) {
+        super(name);
+        this.speed = speed;
+        this.damage = damage;
+        this.piercing = piercing;
+        this.power = power;
+        this.statusEffects.addAll(statusEffects);
     }
 
     public int getSpeed() {

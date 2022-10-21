@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Added SkillStats">
-      <change afterPath="$PROJECT_DIR$/src/main/ConsoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/GameController.java" afterDir="false" />
+    <list default="true" id="f9d3b269-6de2-4f0a-80d6-ff99249ce65d" name="Changes" comment="Began implementing StatGroup into other classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ConsoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/StatGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/StatGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/items/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/items/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/Part.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Casing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Dust.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Powder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Primer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Projectile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/items/bulletparts/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/skills/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/skills/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/skills/SkillStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/StatGroup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665865592210</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Began implementing StatGroup into other classes">
+      <created>1666135923905</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1666135923905</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,7 +238,8 @@
     <MESSAGE value="Status Effect Work &amp; More Changes" />
     <MESSAGE value="Minor changes" />
     <MESSAGE value="Added SkillStats" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added SkillStats" />
+    <MESSAGE value="Began implementing StatGroup into other classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Began implementing StatGroup into other classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
